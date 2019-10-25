@@ -44,8 +44,8 @@ contract TicketERC20 is ERC20Interface, Mortal {
     mapping (address=>mapping (address=>uint)) ownerAllowances;
 
     constructor() public {
-        myName = "EPD Creditos";
-        mySymbol = "EPDC2019";
+        myName = "EP Creditos";
+        mySymbol = "EPC2019";
         myTotalSupply = 1000000;
         decimals = 0;
         balances[msg.sender] = myTotalSupply;
