@@ -18,10 +18,21 @@ donoRico = true;
 else {
 donoRico = false);
 
-function set(uint enviado) public {
+function set(uint enviado) public payable comCustoMinomo(1000){
 nuemroSorteado = enviado;
 contadorDeSorteios = ++;
+
+if (msg.value > 1000){
+uint troco = msg.value - 1000;
+msg.sender.transfer (troco);
+emit trocoEnviado(msg.sender, troco);
 }
+}
+modifier comCustoMinimo (uint min) {
+require(msg.value >= min, "Não foi enviado Ether suficiente.");
+_;
+}
+
 function get () public view returns (uint) {
 return numeroSorteado;
 }
