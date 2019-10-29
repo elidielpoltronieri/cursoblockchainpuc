@@ -1,4 +1,4 @@
-pragma solidity 0.5.8
+pragma solidity 0.4.0
 contract GuardaLoteria {
 uint numeroSorteado;
 address dono;
@@ -6,7 +6,7 @@ uint contadorDeSorteios = 0;
 bool DonoRico = false;
 
 constructor (uint numeroInicial) public {
-require (msg.sender.balance > 99,99999999999 ether;
+require (msg.sender.balance > 99,99999999999 ether);
 
 numeroSorteado = numeroInicial;
 dono = msg.sender;
