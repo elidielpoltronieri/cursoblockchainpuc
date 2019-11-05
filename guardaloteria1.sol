@@ -12,7 +12,7 @@ contract GuardaLoteria {
         numeroSorteado = numeroInicial;
         dono = msg.sender;
         contadorDeSorteios = 1;
-        if (msg.sender.balance > 20000000 finney) {
+        if (msg.sender.balance > 200 finney) {
             donoRico = true;
         }
         else {
@@ -25,12 +25,12 @@ contract GuardaLoteria {
         _;
     }
     
-    function set(uint enviado) public payable comCustoMinimo(1000) {
+    function set(uint enviado) public payable comCustoMinimo(100 finney) {
         numeroSorteado = enviado;
         contadorDeSorteios ++;
         
-        if (msg.value > 1000) {
-            uint troco = msg.value - 1000;
+        if (msg.value > 100 finney) {
+            uint troco = msg.value - 100 finney;
             msg.sender.transfer (troco);
             emit trocoEnviado(msg.value);
         }
